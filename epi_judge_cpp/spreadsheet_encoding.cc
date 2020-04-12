@@ -3,9 +3,13 @@
 #include "test_framework/generic_test.h"
 using std::string;
 
-int SSDecodeColID(const string& col) {
-  // TODO - you fill in here.
-  return 0;
+int SSDecodeColID(const string &col) {
+  int r = 0;
+  for (auto c : col) {
+    r *= 26;
+    r += c - 'A' + 1;
+  }
+  return r;
 }
 
 int main(int argc, char* argv[]) {
